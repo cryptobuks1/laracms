@@ -1,0 +1,34 @@
+{
+    "name": "mysang/laracms",
+    "description": "Laravel CMS",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "My Sang",
+            "email": "sangnck@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Laracms\\": "src/"
+        },
+        "files": [
+            "src/Helpers/helper.php"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Laracms\\LaravelAdminServiceProvider"
+            ]
+        }
+    }
+}

@@ -48,6 +48,6 @@ Route::namespace('Laracms\Controllers')
     ->group(function() {
         # Index
         Route::get('/', 'SettingController@index')->middleware([])->name('index');
-        Route::put('update', 'SettingController@index')->middleware([])->name('update');
+        Route::post('update', 'SettingController@update')->middleware([])->name('update');
     });
 });

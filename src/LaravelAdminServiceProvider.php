@@ -33,6 +33,11 @@ class LaravelAdminServiceProvider extends ServiceProvider
         $this->app->singleton('menu', function () {
             return new Menu;
         });
+
+        $this->app->bind(
+            \Laracms\Repositories\Contracts\OptionInterface::class,
+            \Laracms\Repositories\Eloquents\OptionRepository::class
+        );
     }
 
     /**

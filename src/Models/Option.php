@@ -7,12 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class Option extends Model
 {
     /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'option_name', 'option_value', 'autoload',
+        'option_name', 'option_value', 'autoload'
     ];
 
     /**
@@ -23,6 +30,6 @@ class Option extends Model
      */
     public function scopePublished($query)
     {
-        return $query->select('option_name', 'option_value', 'autoload');
+        return $query->select('option_name', 'option_value');
     }
 }

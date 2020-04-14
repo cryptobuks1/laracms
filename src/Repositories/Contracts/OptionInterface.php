@@ -2,7 +2,8 @@
 
 namespace Laracms\Repositories\Contracts;
 
-interface OptionRepositoryInterface
+interface OptionInterface
 {
-    public function get();
+    public function findByName($name);
+    public function findByNames($names);
 }
