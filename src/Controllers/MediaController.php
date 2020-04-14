@@ -29,7 +29,7 @@ class MediaController extends Controller
             'media' => $this->mediaRepository->paginate(120),
             'filter' => $this->mediaRepository->folders()
         ];
-        return view('admin.media.index', $data);
+        return view('laracms::media.index', $data);
     }
 
     function upload(Request $request){

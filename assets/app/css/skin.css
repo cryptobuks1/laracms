@@ -47,8 +47,6 @@ body.text-sm .control-sidebar {
 }
 
 .content-header a.btn {
-    -ms-flex-positive: 1;
-    flex-grow: 1;
     margin-right: .4rem;
     margin-bottom: .4rem;
 }
@@ -58,7 +56,7 @@ body.text-sm .control-sidebar {
 }
 
 .text-sm .content-header {
-    padding: .7rem .5rem 0.7rem .5rem;
+    padding: 1rem .5rem 0.7rem .5rem;
 }
 
 .callout {
@@ -101,10 +99,6 @@ body.text-sm .control-sidebar {
 }
 
 label:not(.form-check-label):not(.custom-file-label) {
-    font-weight: 600;
-}
-
-.text-sm .card-title {
     font-weight: 600;
 }
 
