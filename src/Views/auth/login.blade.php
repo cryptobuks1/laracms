@@ -1,4 +1,4 @@
-@extends('laraveladmin::auth.app')
+@extends('laracms::auth.app')
 @section('title', 'Admin Login')
 @section('content')
 <div class="login-box">

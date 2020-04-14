@@ -18,7 +18,7 @@ class Role
      */
     public function __construct()
     {
-        $this->roles = config('laraveladmin.roles');
+        $this->roles = config('laracms.roles');
     }
 
     /**

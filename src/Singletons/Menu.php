@@ -20,7 +20,7 @@ class Menu
      */
     public function __construct()
     {
-        $this->menu = config('laraveladmin.menu');
+        $this->menu = config('laracms.menu');
     }
 
     /**

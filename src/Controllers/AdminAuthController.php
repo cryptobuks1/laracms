@@ -12,6 +12,6 @@ class AdminAuthController extends Controller
      */
     public function login()
     {
-        return view('laraveladmin::auth.login');
+        return view('laracms::auth.login');
     }
 }

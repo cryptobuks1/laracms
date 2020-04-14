@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Laracms\Singletons\Role;
 use Laracms\Singletons\Menu;
 
-class LaravelAdminServiceProvider extends ServiceProvider
+class LaraCmsServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -23,7 +23,7 @@ class LaravelAdminServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/config.php', 'laraveladmin'
+            __DIR__.'/../config/config.php', 'laracms'
         );
 
         $this->app->singleton('role', function () {
@@ -37,6 +37,11 @@ class LaravelAdminServiceProvider extends ServiceProvider
         $this->app->bind(
             \Laracms\Repositories\Contracts\OptionInterface::class,
             \Laracms\Repositories\Eloquents\OptionRepository::class
+        );
+
+        $this->app->bind(
+            \Laracms\Repositories\Contracts\MediaInterface::class,
+            \Laracms\Repositories\Eloquents\MediaRepository::class
         );
     }
 
@@ -61,12 +66,12 @@ class LaravelAdminServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             # Publish config
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('laraveladmin.php')
+                __DIR__.'/../config/config.php' => config_path('laracms.php')
             ], 'config');
 
             # Publish assets
             $this->publishes([
-                __DIR__.'/../assets' => public_path('vendor/laraveladmin'),
+                __DIR__.'/../assets' => public_path('vendor/laracms'),
             ], 'public');
         }
     }
@@ -80,6 +85,6 @@ class LaravelAdminServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/Routes/routes.php');
         $this->loadMigrationsFrom(__DIR__.'/Migrations');
-        $this->loadViewsFrom(__DIR__.'/Views', 'laraveladmin');
+        $this->loadViewsFrom(__DIR__.'/Views', 'laracms');
     }
 }

@@ -19,7 +19,8 @@ class SettingController extends Controller
      *
      * @return void
      */
-    public function __construct(OptionInterface $optionRepository) {
+    public function __construct(OptionInterface $optionRepository)
+    {
         $this->optionRepository = $optionRepository;
     }
 
@@ -34,7 +35,7 @@ class SettingController extends Controller
             'site_email',
             'site_phone'
         ]);
-        return view('laraveladmin::settings.index', $data);
+        return view('laracms::settings.index', $data);
     }
 
     /**

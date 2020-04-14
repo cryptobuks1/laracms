@@ -1,4 +1,4 @@
-@extends('laraveladmin::app')
+@extends('laracms::app')
 @section('title', 'Cài đặt chung')
 @section('content')
     <div class="card card-default">

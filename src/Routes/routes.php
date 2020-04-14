@@ -41,6 +41,21 @@ Route::namespace('Laracms\Controllers')
     # Dashboard
     Route::get('/', 'AdminController@index')->middleware([])->name('index');
 
+    # Media
+    Route::prefix('media')
+    ->name('media.')
+    ->middleware([])
+    ->group(function() {
+        Route::get('/', 'MediaController@index')->name('index');
+		Route::post('/', 'MediaController@upload')->name('index');
+		Route::post('lazy', 'MediaController@lazy')->name('lazy');
+		Route::post('filter', 'MediaController@filter')->name('filter');
+		Route::post('single', 'MediaController@single')->name('single');
+		Route::post('update', 'MediaController@update')->name('update');
+		Route::post('delete', 'MediaController@delete')->name('delete');
+		Route::post('delete-multi', 'MediaController@deleteMultiple')->name('delete_multiple');
+    });
+
     # Settings
     Route::prefix('settings')
     ->name('settings.')

@@ -17,6 +17,12 @@ return [
             'icon' => 'fas fa-tachometer-alt'
         ],
         [
+            'type' => 'item',
+            'label' => 'Thư viện hình ảnh',
+            'route' => 'admin.media.index',
+            'icon' => 'fas fa-photo-video'
+        ],
+        [
             'type' => 'header',
             'label' => 'CÀI ĐẶT HỆ THỐNG'
         ],

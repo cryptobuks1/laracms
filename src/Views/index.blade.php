@@ -1,4 +1,4 @@
-@extends('laraveladmin::app')
+@extends('laracms::app')
 @section('title', 'Admin Dashboard')
 @section('header')
     <div class="d-flex flex-wrap">
