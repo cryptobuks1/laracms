@@ -21,6 +21,7 @@ class CreateMediaTable extends Migration
             $table->string('mime_type', 20);
             $table->string('type', 20);
             $table->string('url', 250);
+            $table->string('source', 250);
             $table->string('alt', 250)->nullable();
             $table->text('description')->nullable();
             $table->string('location', 100)->nullable();

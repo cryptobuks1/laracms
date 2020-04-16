@@ -96,7 +96,7 @@
 									<textarea class="form-control form-control-sm input_media_description" rows="3"></textarea>
 								</div>
 								<div class="form-group">
-									<span class="float-left" id="save_media_result"><i class="dashicons dashicons-yes"></i> Lưu thành công</span>
+									<span class="float-left" id="save_media_result"><i class="fas fa-check"></i> Lưu thành công</span>
 									<a href="javascript:void(0)" class="float-right" id="delete_media" close-modal="false">Xóa vĩnh viễn</a>
 									<div class="clearfix"></div>
 								</div>
@@ -360,7 +360,7 @@
 		}).done(function(data){
 			if(data.length > 0){
 				for(var i = 0; i < data.length; i++){
-					var media_file = '<div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 upload_file_preview"><div class="media_file" media-id="'+data[i].media_id+'" title="'+data[i].media_name+'.'+data[i].media_extension+'"><div class="media_file_selected"><i class="dashicons dashicons-yes"></i></div><div class="img_wrapper"><div class="img_show"><div class="img_thumbnail"><div class="img_centered"><img src="'+data[i].media_url+'" class="'+data[i].media_style+'" alt="'+data[i].media_alt+'"></div></div></div></div></div></div>';
+					var media_file = '<div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 upload_file_preview"><div class="media_file" media-id="'+data[i].media_id+'" title="'+data[i].media_name+'.'+data[i].media_extension+'"><div class="media_file_selected"><i class="fas fa-check"></i></div><div class="img_wrapper"><div class="img_show"><div class="img_thumbnail"><div class="img_centered"><img src="'+data[i].media_url+'" class="'+data[i].media_style+'" alt="'+data[i].media_alt+'"></div></div></div></div></div></div>';
 					$('.media_show .row').append(media_file);
 				}
 			}
@@ -432,7 +432,7 @@
 		onNewFile: function(id, file){
 			var isize = Math.floor( Math.log(file.size) / Math.log(1024) );
 			var hsize = (file.size / Math.pow(1024, isize) ).toFixed(2) * 1 + ' ' + ['B', 'KB', 'MB', 'GB', 'TB'][id];
-			var template = '<div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 upload_file_preview" id="upload-file' + id + '"><div class="media_file" media-id="'+ id +'" title="'+ file.name +'"><div class="media_file_selected"><i class="dashicons dashicons-yes"></i></div><div class="img_wrapper"><div class="img_show"><div class="img_thumbnail"><div class="img_centered"><img src="'+file.name+'" class="upload-image-preview" alt="'+file.name+'"></div></div></div></div><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div></div></div>';
+			var template = '<div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 upload_file_preview" id="upload-file' + id + '"><div class="media_file" media-id="'+ id +'" title="'+ file.name +'"><div class="media_file_selected"><i class="fas fa-check"></i></div><div class="img_wrapper"><div class="img_show"><div class="img_thumbnail"><div class="img_centered"><img src="'+file.name+'" class="upload-image-preview" alt="'+file.name+'"></div></div></div></div><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div></div></div>';
 			$('#upload_image_preview').prepend(template);
 			resizeMediaHeight();
 			if(typeof FileReader !== "undefined"){
@@ -494,7 +494,7 @@
 			if(data.length > 0){
 				var show_media_html = '';
 				for(var i = 0; i < data.length; i++){
-					var media_file = '<div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 upload_file_preview"><div class="media_file" media-id="'+data[i].media_id+'" title="'+data[i].media_name+'.'+data[i].media_extension+'"><div class="media_file_selected"><i class="dashicons dashicons-yes"></i></div><div class="img_wrapper"><div class="img_show"><div class="img_thumbnail"><div class="img_centered"><img src="'+data[i].media_url+'" class="'+data[i].media_style+'" alt="'+data[i].media_alt+'"></div></div></div></div></div></div>';
+					var media_file = '<div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 upload_file_preview"><div class="media_file" media-id="'+data[i].media_id+'" title="'+data[i].media_name+'.'+data[i].media_extension+'"><div class="media_file_selected"><i class="fas fa-check"></i></div><div class="img_wrapper"><div class="img_show"><div class="img_thumbnail"><div class="img_centered"><img src="'+data[i].media_url+'" class="'+data[i].media_style+'" alt="'+data[i].media_alt+'"></div></div></div></div></div></div>';
 					show_media_html += media_file;
 				}
 				$('.media_show .row').html(show_media_html);
